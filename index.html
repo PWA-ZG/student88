@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Matija Vugrinec, 0036525885</title>
+        <link rel="stylesheet" href="./assets/site.css">
+        <link rel="manifest" href="./manifest.json">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+      </head>
+    
+
+    <body>
+        
+
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Web2 lab5 - 0036525885 Matija Vugrinec</a>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">Home</a>
+                    </li  class="nav-item">
+                    <li>
+                      <a class="nav-link" href="nativeapi.html">native api demonstration</a>
+                    </li>
+              </ul>
+
+            </div>
+          </nav>
+
+          <p>
+            Ova aplikacija implementira : <br/>
+            koristiti neki native API (camera, microphone, bluetooth, …)  <br/>
+                ->DA, camera api, na native api linku možemo sliknuti sliku i ona će se prikazati.  <br/>
+            biti installable <br/>
+                -> Da, možemo napraviti instalaciju u desnom gornjem kutu google chromea<br/>
+            imati barem jednu cacheing strategiju <br/>
+             -> Cache First (Cache Falling Back to Network), vidimo na mrežnom tabu u brosweru da se ne isporučuje kroz network, ako je u cachu.<br/>
+            offline rad barem za app shell <br/>
+             -> Radi offline nakon što uključimo u postavkama offline rad<br/>
+            background sync -> NE<br/>
+            push notifikacija (npr. nakon što prođe bg sync možete poslati push notif) -> NE<br/>
+            demonstrirati barem na jednom primjeru progressive enhancement/gracefull degradation <br/>
+            -> DA, ako je onemogućena kamera onda je fallback na unos datoteke koja se prikaže na stranici.<br/>
+          </p>
+          
+
+          <div class="logo-wrapper">
+            <img src="./assets/img/logo.png" alt="Cookbook logo" />
+          </div>
+
+      
+
+        <script>
+            navigator.serviceWorker.register('./sw.js')
+                .then(reg => console.log('SW registered!', reg))
+                .catch(err => console.error('Error registering service worker', err));
+
+        </script>
+          
+    </body>
+</html>
